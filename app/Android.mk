@@ -15,36 +15,23 @@
 LOCAL_PATH := $(call my-dir)
 
 include $(CLEAR_VARS)
-LOCAL_MODULE := NexusWallpapersStubPrebuilt2018
-LOCAL_MODULE_TAGS := optional
-LOCAL_SRC_FILES := NexusWallpapersStubPrebuilt2018/NexusWallpapersStubPrebuilt2018.apk
-LOCAL_CERTIFICATE := platform
-LOCAL_MODULE_CLASS := APPS
-LOCAL_MODULE_SUFFIX := $(COMMON_ANDROID_PACKAGE_SUFFIX)
-LOCAL_DEX_PREOPT := false
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
 LOCAL_MODULE := SoundPickerPrebuilt
 LOCAL_MODULE_TAGS := optional
-ifeq ($(TARGET_USE_OLD_SOUND_PICKER),true)
-LOCAL_SRC_FILES := SoundPickerPrebuilt/SoundPickerPrebuilt_old.apk
-LOCAL_CERTIFICATE := platform
-else
 LOCAL_SRC_FILES := SoundPickerPrebuilt/SoundPickerPrebuilt.apk
 LOCAL_CERTIFICATE := PRESIGNED
-endif
 LOCAL_MODULE_CLASS := APPS
 LOCAL_MODULE_SUFFIX := $(COMMON_ANDROID_PACKAGE_SUFFIX)
 LOCAL_DEX_PREOPT := false
 include $(BUILD_PREBUILT)
 
+#Lawnchair
 include $(CLEAR_VARS)
-LOCAL_MODULE := MarkupGoogle
-LOCAL_MODULE_TAGS := optional
-LOCAL_SRC_FILES := MarkupGoogle/MarkupGoogle.apk
-LOCAL_CERTIFICATE := PRESIGNED
+LOCAL_MODULE := Lawnchair
+LOCAL_SRC_FILES := Lawnchair/Lawnchair.apk
 LOCAL_MODULE_CLASS := APPS
-LOCAL_MODULE_SUFFIX := $(COMMON_ANDROID_PACKAGE_SUFFIX)
+LOCAL_PRIVILEGED_MODULE := true
+LOCAL_OVERRIDES_PACKAGES := Home Launcher2 Launcher3 Launcher3QuickStep
+LOCAL_CERTIFICATE := PRESIGNED
 LOCAL_DEX_PREOPT := false
 include $(BUILD_PREBUILT)
+
